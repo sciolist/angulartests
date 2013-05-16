@@ -2,7 +2,7 @@ var app = angular.module('app');
 
 app.config(function($routeProvider) {
 	$routeProvider.when('/product-list', {
-		templateUrl: '/app/views/product-list.html',
+		templateUrl: './app/views/product-list.html',
 		controller: 'ProductList'
 	});
 });
