@@ -1,0 +1,20 @@
+<div ng-show="products"> <!-- hide view until populated -->
+	Filter: <input ng-model="filter"> <button ng-click="delete()">Delete selected</button>
+
+	<div style="position: absolute; right: 0; top: 0; background: white; width: 200px; height: 200px; border: 2px solid blue;">
+		<h4>Selection:</h4>
+		<div ng-repeat="product in products | filter:isSelected">
+			{{product.from_user_name}}
+		</div>
+	</div>
+
+	<div ng-repeat="product in products | filter:filter"
+		 style="display: block; padding: 12px 0; cursor: pointer;">
+		<input type="checkbox" ng-model="product.selected">
+		<span ng-click="product.visible = !product.visible">{{product.from_user_name}}</span>
+		<div ng-show="product.visible">
+			<h4>Beskrivning:</h4>
+			{{product.text}}
+		</div>
+	</div>
+</div>
