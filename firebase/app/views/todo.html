@@ -1,0 +1,16 @@
+<div ng-show="items">
+	<div ng-class="{ done: item.done }" ng-repeat="item in items">
+		<input type="checkbox" ng-model="item.done">
+		<input ng-model="item.text">
+		<span ng-click="delete($index)">X</span>
+	</div>
+	<form>
+		<input ng-model="new">
+		<button ng-click="submit(new)">Add</button>
+	</form>
+</div>
+
+<style>
+	.done { background: lightgreen; }
+	div > div { margin: 16px 16px 16px 0; }
+</style>
